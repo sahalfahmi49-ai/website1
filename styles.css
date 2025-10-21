@@ -1,0 +1,337 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* Custom scrollbar for a better look */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+::-webkit-scrollbar-thumb {
+    background: #38bdf8;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0ea5e9;
+}
+.hero-gradient {
+    background: linear-gradient(to top, #0f172a, rgba(15, 23, 42, 0.7)), url('https://placehold.co/1200x600/0f172a/38bdf8?text=Pesona+Channa') no-repeat center center/cover;
+}
+.modal {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Responsive media helpers */
+.aspect-card {
+    aspect-ratio: 4 / 3;
+}
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+/* Professional image enhancements */
+.channa-card {
+    position: relative;
+    background: linear-gradient(145deg, #1e293b, #334155);
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.3),
+        0 2px 4px -1px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.channa-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(56, 189, 248, 0.3),
+        0 0 30px rgba(56, 189, 248, 0.2);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.channa-card img {
+    filter: brightness(0.95) contrast(1.05) saturate(1.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.channa-card:hover img {
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+    transform: scale(1.08);
+}
+
+/* Image loading states */
+.image-placeholder {
+    background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.image-error {
+    background: linear-gradient(135deg, #374151, #4b5563);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* Modal image enhancements */
+.modal img {
+    filter: brightness(0.98) contrast(1.05);
+    transition: all 0.3s ease;
+}
+
+.modal img:hover {
+    filter: brightness(1.05) contrast(1.1);
+    transform: scale(1.05);
+}
+
+/* Modal enhancements */
+#modal-content {
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Zoom overlay */
+.zoom-overlay {
+    animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Zoom image styling */
+.zoom-overlay img {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: grab;
+    transform-origin: center center;
+    transition: transform 0.1s ease-out;
+    object-fit: contain !important;
+    display: block;
+}
+
+.zoom-overlay img:active {
+    cursor: grabbing;
+}
+
+.zoom-overlay img:hover {
+    cursor: grab;
+}
+
+/* Zoom container styling */
+.zoom-overlay .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Zoom overlay info panel */
+.zoom-overlay .info-panel {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 90vw;
+    overflow-wrap: break-word;
+}
+
+/* Responsive info panel */
+@media (max-width: 768px) {
+    .zoom-overlay .info-panel {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+        max-width: 85vw;
+    }
+    
+    .zoom-overlay .info-panel span {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Ensure zoom overlay covers everything */
+.zoom-overlay {
+    z-index: 9999 !important;
+}
+
+/* Professional gradient overlays */
+.card-overlay {
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+}
+
+/* Smooth animations */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.scale-in {
+    animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Enhanced card styling */
+.channa-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, transparent, rgba(56, 189, 248, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+    z-index: 1;
+}
+
+.channa-card:hover::before {
+    opacity: 1;
+}
+
+.channa-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Improved search bar */
+#search-bar:focus {
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Better scrollbar for modal */
+.modal ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal ::-webkit-scrollbar-track {
+    background: rgba(51, 65, 85, 0.3);
+}
+
+.modal ::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.5);
+    border-radius: 3px;
+}
+
+.modal ::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.7);
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 640px) {
+    .channa-card {
+        box-shadow: 
+            0 4px 6px -1px rgba(0, 0, 0, 0.3),
+            0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    }
+    
+    .channa-card:hover {
+        transform: translateY(-6px) scale(1.02);
+    }
+    
+    /* Touch-friendly button sizes */
+    button {
+        min-height: 48px;
+        font-size: 16px;
+    }
+    
+    /* Better spacing for mobile */
+    .space-y-4 > * + * {
+        margin-top: 1.25rem;
+    }
+    
+    /* Modal adjustments for mobile */
+    .modal {
+        padding: 0.75rem;
+    }
+    
+    /* Better text sizing for mobile */
+    .text-xs {
+        font-size: 0.875rem;
+    }
+    
+    /* Improved touch targets */
+    .w-6.h-6, .w-8.h-8 {
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    /* Larger cards for mobile */
+    .channa-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Tablet responsive improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .channa-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+    
+    /* Better grid spacing for tablets */
+    .grid {
+        gap: 2rem;
+    }
+    
+    /* Larger buttons for tablets */
+    button {
+        min-height: 50px;
+        font-size: 16px;
+    }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1280px;
+    }
+    
+    /* Enhanced hover effects for desktop */
+    .channa-card:hover {
+        transform: translateY(-10px) scale(1.03);
+    }
+    
+    /* Larger buttons for desktop */
+    button {
+        min-height: 52px;
+        font-size: 16px;
+    }
+    
+    /* Better grid spacing for desktop */
+    .grid {
+        gap: 2.5rem;
+    }
+}
+
